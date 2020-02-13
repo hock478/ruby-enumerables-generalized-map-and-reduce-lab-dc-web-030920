@@ -10,19 +10,19 @@ def map(source_array)
 end
 
 def reduce(source_array, starting_point = nil)
-  index = 0
- 
+
   if starting_point
     i = 0
     sum = starting_point
   else
-    sum = source_array[index]
-    
+    sum = source_array[i]
+    i = 1
   end
+  
   while index < source_array.length do
     sum = yield(sum, source_array[index])
-    starting_point += source_ar
+    starting_point += source_array
     index += 1
   end
-  value
+  sum
 end
